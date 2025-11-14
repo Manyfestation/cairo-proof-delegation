@@ -1,0 +1,18 @@
+# Cairo/Scarb build artifacts
+target/
+CACHEDIR.TAG
+
+# Scarb.lock should be committed (dependency lockfile)
+# But we ignore target/ directory which contains build artifacts
+
+# macOS
+.DS_Store
+
+# Editor files
+.vscode/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
