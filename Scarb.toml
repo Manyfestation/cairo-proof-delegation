@@ -1,0 +1,35 @@
+[package]
+name = "vprog_compo_poc"
+version = "0.1.0"
+edition = "2024_07"
+
+# This section explicitly tells Scarb to build an executable
+# from src/main.cairo, which is exactly what we want.
+
+[cairo]
+enable-gas = false
+#sierra = true
+
+
+#[[target.starknet-contract]]
+#sierra = true
+
+[dependencies]
+starknet = "2.13.1"
+assert_macros = "2.12.0"
+cairo_execute = "2.11.4"
+
+[tool.scarb]
+allow-prebuilt-plugins = ["snforge_std"]
+
+[scripts]
+test = "snforge test"
+
+[dev-dependencies]
+cairo_test = "2.13.4"
+snforge_std = "0.48.1"
+assert_macros = "2.13.1"
+
+[[target.executable]]
+name = "main"
+function = "vprog_compo_poc::main::main"
